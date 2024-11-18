@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Pizza, Drink
 
-# Register your models here.
+@admin.register(Pizza)
+class PizzaAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+@admin.register(Drink)
+class PizzaAdmin(admin.ModelAdmin):
+    list_display = ['name']
