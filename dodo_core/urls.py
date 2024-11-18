@@ -18,9 +18,9 @@ from django.urls import path
 from products.views import DrinkListView, DrinkDetailView, PizzaListView, PizzaDetailView
 
 urlpatterns = [
-    path('drinks/', DrinkListView.as_view(), name='drink_list'),  # Эндпоинт для списка напитков
-    path('drinks/<int:pk>/', DrinkDetailView.as_view(), name='drink_detail'),  # Эндпоинт для детальной страницы напитка
-    path('pizzas/', PizzaListView.as_view(), name='pizza_list'),  # Эндпоинт для списка пицц
-    path('pizzas/<int:pk>/', PizzaDetailView.as_view(), name='pizza_detail'),  # Эндпоинт для детальной страницы пиццы
-
+    path('admin/', admin.site.urls),
+    path('api/v1/drinks/', DrinkListView.as_view(), name='drink_list'),  # Эндпоинт для списка напитков
+    path('api/v1/drinks/<int:pk>/', DrinkDetailView.as_view(), name='drink_detail'),  # Эндпоинт для детальной страницы напитка
+    path('api/v1/pizzas/', PizzaListView.as_view(), name='pizza_list'),  # Эндпоинт для списка пицц
+    path('api/v1/pizzas/<int:pk>/', PizzaDetailView.as_view(), name='pizza_detail'),  # Эндпоинт для детальной страницы пиццы
 ]
