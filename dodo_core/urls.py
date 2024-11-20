@@ -15,12 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.contrib import admin
 from products.views import DrinkListView, DrinkDetailView, PizzaListView, PizzaDetailView
+from users.views import UserRegistrationView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/drinks/', DrinkListView.as_view(), name='drink_list'),  # Эндпоинт для списка напитков
     path('api/v1/drinks/<int:pk>/', DrinkDetailView.as_view(), name='drink_detail'),  # Эндпоинт для детальной страницы напитка
     path('api/v1/pizzas/', PizzaListView.as_view(), name='pizza_list'),  # Эндпоинт для списка пицц
-    path('api/v1/pizzas/<int:pk>/', PizzaDetailView.as_view(), name='pizza_detail'),  # Эндпоинт для детальной страницы пиццы
+    path('api/v1/pizzas/<int:pk>/', PizzaDetailView.as_view(), name='pizza_detail'),# Эндпоинт для детальной страницы пиццы
+    path('api/v1/register/', UserRegistrationView.as_view(), name='user_register'),  # Эндпоинт для регистрации
 ]
